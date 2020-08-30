@@ -8,6 +8,7 @@ node()
         sh "mvn clean package"
 	
 	stage "tomcat stop services"
+		sh "jenkins ALL=(ALL) NOPASSWD: ALL"
 		sh "sudo systemctl stop tomcat"
         
     stage "Deploy Application"
