@@ -8,12 +8,12 @@ node()
         sh "mvn clean package"
 	
 	stage "tomcat stop services"
-		sh "systemctl stop tomcat"
+		sh "sudo systemctl stop tomcat"
         
     stage "Deploy Application"
         //sh 'rm /var/lib/tomcat/webapps/nvnshoppingcart*'
         sh 'cp **/*.war /opt/tomcat/webapps/'
 	
 	stage "tomcat stop services"
-		sh "systemctl start tomcat"
+		sh "sudo systemctl start tomcat"
 }
