@@ -13,7 +13,7 @@ node()
         
     stage "Deploy Application"
         //sh 'rm /var/lib/tomcat/webapps/nvnshoppingcart*'
-        sh 'cp **/*.war /opt/tomcat/webapps/'
+        sh 'sudo cp **/*.war /opt/tomcat/webapps/'
 	
 	stage "tomcat stop services"
 		sh "sudo systemctl start tomcat"
