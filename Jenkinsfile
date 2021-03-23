@@ -48,7 +48,7 @@ pipeline{
 '''
 				}
     }
-   stage('Deploy to Tomcat'){
+   stage('Deploy to Production'){
    
 		steps{
      bat "copy target\\nvnshoppingcart.war \"${tomcatWeb}\\nvnshoppingcart.war\""
