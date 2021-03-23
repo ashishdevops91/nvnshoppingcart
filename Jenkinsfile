@@ -22,7 +22,7 @@ pipeline{
 		steps{
       // Get maven home path
         
-      bat "${mvnHome}/bin/mvn clean package "
+      bat "${mvnHome}/bin/mvn clean package sonar:sonar"
 		}
       }
    stage ('Stop Tomcat Server') {
