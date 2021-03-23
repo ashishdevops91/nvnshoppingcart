@@ -22,9 +22,19 @@ pipeline{
 		steps{
       // Get maven home path
         
-      bat "${mvnHome}/bin/mvn clean package sonar:sonar"
+      bat "${mvnHome}/bin/mvn  package sonar:sonar"
 		}
       }
+	  
+	    stage('Upload Artifact to Nexus Repo'){
+		steps{
+      
+        
+      bat "nexusArtifactUploader artifacts: [[artifactId: 'nvnshoppingcart', classifier: '', file: 'target\\*.war', type: 'war']], credentialsId: 'Nexus_connection', groupId: 'com.demo', nexusUrl: 'http://localhost:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'devops', version: '1.0.0-SNAPSHOT'"
+		}
+      }
+	  
+	 
    stage ('Stop Tomcat Server') {
 		steps{
                bat ''' @ECHO OFF
