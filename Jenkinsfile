@@ -30,7 +30,7 @@ pipeline{
 		steps{
       
         
-      bat "nexusArtifactUploader artifacts: [[artifactId: 'nvnshoppingcart', classifier: '', file: 'target\\*.war', type: 'war']], credentialsId: 'Nexus_connection', groupId: 'com.demo', nexusUrl: 'http://localhost:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'devops', version: '1.0.0-SNAPSHOT'"
+      nexusArtifactUploader artifacts: [[artifactId: 'nvnshoppingcart', classifier: '', file: 'target\\*.war', type: 'war']], credentialsId: 'Nexus_connection', groupId: 'com.demo', nexusUrl: 'http://localhost:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'devops', version: '1.0.0-SNAPSHOT'
 		}
       }
 	  
