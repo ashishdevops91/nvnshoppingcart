@@ -5,8 +5,8 @@ pipeline{
 	
 	environment{
 	 mvnHome= tool('MAVEN_HOME')
-	 def tomcatWeb = 'C:\\opt\\apache-tomcat-8.5.64\\webapps'
-	 def tomcatBin = 'C:\\opt\\apache-tomcat-8.5.64\\bin'
+	 def tomcatWeb = 'C:\apache-tomcat-9.0.52\webapps'
+	 def tomcatBin = 'C:\apache-tomcat-9.0.52\bin'
 	 def tomcatStatus = ''
 	}
 	
@@ -15,7 +15,7 @@ pipeline{
 	
 	   stage('SCM Checkout'){
 		steps{
-		 git 'https://github.com/siteshbade/nvnshoppingcart.git'
+		 git 'https://github.com/ashishdevops91/nvnshoppingcart.git'
 		 }
    }
    stage('Compile-Package-create-war-file'){
